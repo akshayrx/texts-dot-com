@@ -39,7 +39,7 @@ export default function Textform(props) {
 
     // created as exercise1 homework
     const handleAlternating = ()=>{
-        let newText = " ";
+        let newText = '';
         for (let i = 0; i < text.length; i++) {
             if (i % 2 === 0) {
                 newText += text[i].toUpperCase();
@@ -71,19 +71,19 @@ export default function Textform(props) {
   return (
     <>
     <div className="container my-4" style={{color: props.mode==='dark'?'white':'#212527'}}>
-        <h2>Hey,</h2>
+        <h2>{props.heading}</h2>
         <div className="mb-3">
-            <label htmlFor="exampleFormControlTextarea1" className="form-label">{props.heading}</label>
-            <textarea className="form-control" value={text} style={{backgroundColor: props.mode==='dark'?'#a7a2a2':'#ededed', color: props.mode==='dark'?'white':'#212527'}} onChange={handleOnChange} id="myBox" rows="6"></textarea>
+            <label htmlFor="exampleFormControlTextarea1" className="form-label">Texts.com is a free online word counter tool. Texts dot com can be used to counter words, characters, change case of text to title case, alternate case, lowercase and uppercase, and remove extra spaces from paragraph.</label>
+            <textarea className="form-control" value={text} style={{backgroundColor: props.mode==='dark'?'#2e3a55':'#ededed', color: props.mode==='dark'?'white':'#212527'}} onChange={handleOnChange} id="myBox" rows="6"></textarea>
         </div>
         <div className="">
-            <button type="button" onClick={handleUpClick} className="btn btn-primary me-2 my-2">Convert to Uppercase</button>
-            <button type="button" onClick={handleLoClick} className="btn btn-primary me-2 my-2">Convert to Lowercase</button>
-            <button type="button" onClick={handleAlternating} className="btn btn-primary me-2 my-2">aLtERnaTinG CasE</button>
-            <button type="button" onClick={handleTitleCase} className="btn btn-primary me-2 my-2">Title Case</button>
-            <button type="button" onClick={handleCopy} className="btn btn-primary me-2 my-2">Copy Text</button>
-            <button type="button" onClick={handleExtraSpaces} className="btn btn-primary me-2 my-2">Remove Extra Space</button>
-            <button type="button" onClick={handleClear} className="btn btn-secondary me-2 my-2">Clear Text</button>
+            <button type="button" onClick={handleUpClick} className="btn btn-primary me-2 my-2" disabled={text.length===0}>Convert to Uppercase</button>
+            <button type="button" onClick={handleLoClick} className="btn btn-primary me-2 my-2" disabled={text.length===0}>Convert to Lowercase</button>
+            <button type="button" onClick={handleAlternating} className="btn btn-primary me-2 my-2" disabled={text.length===0}>aLtERnaTinG CasE</button>
+            <button type="button" onClick={handleTitleCase} className="btn btn-primary me-2 my-2" disabled={text.length===0}>Title Case</button>
+            <button type="button" onClick={handleExtraSpaces} className="btn btn-primary me-2 my-2" disabled={text.length===0}>Remove Extra Space</button>
+            <button type="button" onClick={handleCopy} className="btn btn-warning me-2 my-2" disabled={text.length===0}>Copy Text</button>
+            <button type="button" onClick={handleClear} className="btn btn-dark me-2 my-2" disabled={text.length===0}>Clear Text</button>
         </div>
     </div>
     <div className="container my-4" style={{color: props.mode==='dark'?'white':'#212527'}}>

@@ -26,13 +26,13 @@ function App() {
       setMode('dark');
       document.body.style.backgroundColor = '#525667';
       displayAlert("Dark mode has been enabled", "success");
-      document.title = 'Texts dot com - Dark mode';
+      //document.title = 'Texts dot com - Dark mode';
     } 
     else {
       setMode('light');
       document.body.style.backgroundColor = 'white';
       displayAlert("Light mode has been enabled", "success");
-      document.title = 'Texts dot com - Light mode';
+      //document.title = 'Texts dot com - Light mode';
     }
   }
 
@@ -41,7 +41,7 @@ function App() {
     <>
     <Navbar title="Texts.com" mode={mode} toggleMode={toggleMode}/>
     <Alert alert={alert}/>
-    <Textform displayAlert={displayAlert} heading="Enter your text to analyze data" mode={mode} />
+    <Textform displayAlert={displayAlert} heading="Word & Character Counter" mode={mode} />
     </>
   );
 }
